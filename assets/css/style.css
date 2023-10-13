@@ -30,7 +30,7 @@ p {
 /* Some variables for commonly used colors */
 :root {
   --blueTheme: rgb(73, 199, 230); 
-  --hoverTheme: rgb(44, 119, 138);
+  --hoverTheme: rgb(99, 145, 156);
   --backgroundTheme: rgb(105, 105, 105);
 }
 
@@ -67,16 +67,21 @@ header h1 {
 /* Hero banner styling */
 .hero-banner {
   background-image: url(../images/hero.jpg);
+  background-repeat: no-repeat;
   background-size: 100%;
   box-shadow: 0 0 8px 8px var(--backgroundTheme) inset; /* Add a fading effect around banner */
-  height: 50vh;
   text-align: center;
+  height: 50vh;
 }
 
 /* Text inside hero banner */
 #welcome-text {
-  position: relative;
-  padding-top: 10%;
+  width: fit-content;
+  margin: 0 auto;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: var(--blueTheme);
+  box-shadow: 0 0 8px 8px var(--backgroundTheme);
   color: white;
 }
 
@@ -85,7 +90,7 @@ header h1 {
   border-radius: 50%; /* Make image a circle */
   box-shadow: 0 0 8px 8px var(--backgroundTheme); /* Add a shadow to make the image pop */
   width: 18%;
-  margin-top: 5%;
+  margin-top: 12%;
 }
 
 /* Subheading styling */
@@ -184,6 +189,82 @@ header h1 {
 }
 
 /* Styling for the "Conact Me" section */
-.contact-list {
+#contact-list {
+  text-align: center;
+}
+
+#contact-list li, 
+#contact-list a {
   display: inline;
+  margin-right: 2%;
+  font-size: larger;
+  list-style: none;
+  text-decoration: none;
+  color: var(--blueTheme);
+}
+
+#contact-list a:hover {
+  color: var(--hoverTheme);
+}
+
+/* Media queries for responsive design */
+
+/* Large tablet */
+@media only screen and (max-width: 1200px) {
+
+  #profile-pic {
+    width: 25%;
+  }
+
+}
+
+/* Small Tablet */
+@media only screen and (max-width: 900px) {
+
+  #profile-pic {
+    width: 50%;
+  }
+
+}
+
+/* Phone */
+@media only screen and (max-width: 700px) {
+
+  #profile-pic {
+    width: 50%;
+    margin-top: 25%;
+  }
+
+  #navbar {
+    text-align: center;
+  }
+
+  /* Display navbar in block form for ease of use on mobile phones */
+  #navbar ul li {
+    display: block;
+    margin: 2%;
+  }
+
+  /* Change layout of "Work" section grid for easier reading on mobile devices */
+  #work-content {
+    display: grid;
+    width: 80%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "work1"
+        "work2"
+        "work3"
+        "work4"
+        "work5"
+    ;
+  }
+
+  /* More spacing for "Contact" section links for easier clicking on mobile devices */
+  #contact-list li, 
+  #contact-list a {
+  margin-right: 10%;
+}
+
+
 }
