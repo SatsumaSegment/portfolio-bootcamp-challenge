@@ -21,7 +21,7 @@ This project taught me how to effectively use CSS variables, media queries and t
 N/A
 
 ## Usage
-The website can be accessed via this link:
+The website can be accessed via this link: https://satsumasegment.github.io/portfolio-bootcamp-challenge/
 
 ## License
 N/A
