@@ -1,11 +1,7 @@
+/* --- CSS to reset all default browser styles --- */
+
 * {
   box-sizing: border-box;
-}
-
-:root {
-  --blueTheme: rgb(73, 199, 230); 
-  --hoverTheme: rgb(44, 119, 138);
-  --backgroundTheme: rgb(105, 105, 105);
 }
 
 body {
@@ -29,55 +25,70 @@ p {
   margin: 0;
 }
 
+/* --------------------------------------------- */
+
+/* Some variables for commonly used colors */
+:root {
+  --blueTheme: rgb(73, 199, 230); 
+  --hoverTheme: rgb(44, 119, 138);
+  --backgroundTheme: rgb(105, 105, 105);
+}
+
+/* Styling for the main title of the page */
 header h1 {
   color: var(--backgroundTheme);
+  background-color: var(--blueTheme);
+  width: fit-content;
   margin-top: 2%;
   padding-left: 2%;
   padding-right: 8px;
-  width: fit-content;
-  background-color: var(--blueTheme);
 }
 
+/* Default styling for the navbar */
 #navbar {
-  text-align: right;
+  text-align: right; /* Align navbar to right of page */
 }
 
 #navbar ul li {
-  display: inline-block;
+  display: inline-block; /* Display the navbar inline */
   margin-right: 2%;
 }
 
 .nav-link {
-  text-decoration: none;
+  text-decoration: none; /* Remove underline text decoration */
   font-size: large;
-  color: var(--blueTheme);
+  color: var(--blueTheme); /* Set a default color for navbar text */
 }
 
 .nav-link:hover {
-  color: var(--hoverTheme);
+  color: var(--hoverTheme); /* Set a color for navbar text when hovered over */
 }
 
+/* Hero banner styling */
 .hero-banner {
   background-image: url(../images/hero.jpg);
   background-size: 100%;
-  box-shadow: 0 0 8px 8px var(--backgroundTheme) inset;
+  box-shadow: 0 0 8px 8px var(--backgroundTheme) inset; /* Add a fading effect around banner */
   height: 50vh;
   text-align: center;
 }
 
+/* Text inside hero banner */
 #welcome-text {
   position: relative;
   padding-top: 10%;
   color: white;
 }
 
+/* Profile picture CSS */
 #profile-pic {
-  border-radius: 50%;
-  box-shadow: 0 0 8px 8px var(--backgroundTheme);
+  border-radius: 50%; /* Make image a circle */
+  box-shadow: 0 0 8px 8px var(--backgroundTheme); /* Add a shadow to make the image pop */
   width: 18%;
   margin-top: 5%;
 }
 
+/* Subheading styling */
 .sub {
   color: var(--blueTheme);
   width: 15%;
@@ -95,14 +106,16 @@ header h1 {
   padding-left: 2%;
   padding-top: 2%;
   padding-bottom: 5%;
-  border-left: 5px solid var(--blueTheme);
+  border-left: 5px solid var(--blueTheme); /* Section deviding border */
 }
 
+/* Styles for the "About Me" text */
 #about p {
   text-align: center;
   color: white;
 }
 
+/* Grid system for displaying the "Work" section images */
 #work-content {
   display: grid;
   width: 80%;
@@ -114,37 +127,6 @@ header h1 {
       "work2 work3"
       "work4 work5"
   ;
-}
-
-#work-content div {
-  border: 5px solid var(--blueTheme);
-}
-
-.work-info {
-  position: absolute;
-  padding-right: 5%;
-  bottom: 10%;
-  background-color: var(--blueTheme);
-}
-
-#work-content img {
-  opacity: 60%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#work-content img:hover {
-  opacity: 100%;
-}
-
-#work1,
-#work2,
-#work3,
-#work4,
-#work5 {
-  position: relative;
-  margin: 1%;
 }
 
 #work1 {
@@ -167,3 +149,41 @@ header h1 {
   grid-area: work5;
 }
 
+/* Styling for the "Work" section */
+#work1,
+#work2,
+#work3,
+#work4,
+#work5 {
+  position: relative;
+  margin: 1%;
+}
+
+#work-content div {
+  border: 5px solid var(--blueTheme);
+}
+
+/* Posiioning for the overlay divs  */
+.work-info {
+  position: absolute;
+  padding-right: 5%;
+  bottom: 10%;
+  background-color: var(--blueTheme);
+}
+
+/* Sizing and styling for the image */
+#work-content img {
+  opacity: 60%; /* Reduced opacity for unselected image */
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#work-content img:hover {
+  opacity: 100%; /* Increased opacity when hovering */
+}
+
+/* Styling for the "Conact Me" section */
+.contact-list {
+  display: inline;
+}
